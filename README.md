@@ -1,21 +1,21 @@
-# AI Recipe Chatbot with DeepSeek
+# AI Chatbot with DeepSeek
 
-A Next.js-based AI chatbot that provides recipe suggestions using DeepSeek's language models. The chatbot acts as an experienced chef with 20 years of global culinary experience, offering creative and safe recipe ideas based on your available ingredients.
+A Next.js-based AI chatbot that provides helpful assistance using DeepSeek's language models. The chatbot acts as a friendly and professional assistant, offering concise and safe responses to your queries.
 
 ## Features
 
-- 🤖 AI-powered recipe suggestions using DeepSeek models
-- 🍳 Specialized in food recipes with culinary expertise
+- 🤖 AI-powered assistance using DeepSeek models
+- 💬 General-purpose conversational capabilities
 - ⚡ Real-time streaming responses
 - 🎨 Clean, responsive UI built with Tailwind CSS
-- 📱 Markdown rendering for formatted recipe responses
-- 🛡️ Safe and healthy recipe recommendations
+- 📱 Markdown rendering for formatted responses
+- 🛡️ Safe and helpful responses
 
 ## Supported Models
 
 This application currently supports the following DeepSeek models:
 
-- **DeepSeek Chat** (`deepseek-chat`) - The primary model used for recipe generation
+- **DeepSeek Chat** (`deepseek-chat`) - The primary model used for general assistance
 
 ## Prerequisites
 
@@ -87,13 +87,15 @@ yarn start
 
 1. **Start the application** using the commands above
 2. **Open your browser** to `http://localhost:3000`
-3. **Enter your ingredients** in the chat input field
-4. **Get recipe suggestions** - The AI chef will provide creative recipe ideas based on your ingredients
+3. **Enter your questions or requests** in the chat input field
+4. **Get helpful responses** - The AI assistant will provide concise and useful answers
 
 ### Example Usage:
 
-- Input: "I have chicken, rice, and vegetables"
-- Output: The AI will suggest recipes like chicken stir-fry with rice and vegetables, including cooking instructions and tips
+- Input: "Can you help me with a coding problem?"
+- Output: The AI will provide assistance with your coding question
+- Input: "What's the weather like today?"
+- Output: The AI will respond with weather information or guidance
 
 ## Technology Stack
 
@@ -101,18 +103,18 @@ yarn start
 - **AI SDK**: Vercel AI SDK with DeepSeek integration
 - **Frontend**: React 19 with TypeScript
 - **Styling**: Tailwind CSS
-- **Markdown**: React Markdown for recipe formatting
+- **Markdown**: React Markdown for formatted responses
 - **State Management**: React Query for efficient data handling
 
 ## API Configuration
 
 The chatbot uses a system prompt that configures the AI to:
 
-- Use British English
-- Respond politely and concisely
-- Specialize exclusively in food recipes
-- Provide safe and healthy cooking recommendations
-- Act as an experienced chef with global culinary knowledge
+- Respond politely and professionally
+- Provide concise answers
+- Avoid unnecessary repetition
+- Always provide safe and helpful responses
+- Be friendly and approachable
 
 ## Environment Variables
 

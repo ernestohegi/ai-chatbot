@@ -31,31 +31,7 @@ export default function DeepSeekChat() {
   }
 
   return (
-    <section className="flex flex-col gap-4 text-xl w-full">
-      {messages.map(({ id, role, parts }) => (
-        <div key={id} className="flex flex-col gap-4">
-          {role === "user" ? "User: " : "AI: "}
-          {parts.map(
-            (part) =>
-              part.type === "text" && (
-                <MemoisedMarkdown key={`${id}`} id={id} content={part.text} />
-              )
-          )}
-        </div>
-      ))}
-
-      {conversationStatus && <p>{conversationStatus}</p>}
-
-      {[SUBMITTED, STREAMING].includes(status) && (
-        <button
-          type="button"
-          onClick={() => stop()}
-          className="border-2 py-2 px-4 rounded-md border-red-500 text-red-500 hover:bg-red-500 hover:text-white disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit"
-        >
-          Stop
-        </button>
-      )}
-
+    <section className="flex flex-col flex-1 gap-4 text-xl w-full h-full overflow-scroll">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -82,6 +58,40 @@ export default function DeepSeekChat() {
           Submit
         </button>
       </form>
+
+      {[SUBMITTED, STREAMING].includes(status) && (
+        <button
+          type="button"
+          onClick={() => stop()}
+          className="border-2 py-2 px-4 rounded-md border-red-500 text-red-500 hover:bg-red-500 hover:text-white disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit"
+        >
+          Stop
+        </button>
+      )}
+
+      <article className="flex flex-col gap-4 overflow-scroll">
+        {messages.map(({ id, role, parts }) => (
+          <div key={id} className="flex gap-2">
+            <span className="font-bold">
+              {role === "user" ? "User: " : "AI: "}
+            </span>
+            <div className="flex flex-col gap-4">
+              {parts.map(
+                (part) =>
+                  part.type === "text" && (
+                    <MemoisedMarkdown
+                      key={`${id}`}
+                      id={id}
+                      content={part.text}
+                    />
+                  )
+              )}
+            </div>
+          </div>
+        ))}
+      </article>
+
+      {conversationStatus && <p>{conversationStatus}</p>}
     </section>
   );
 }
