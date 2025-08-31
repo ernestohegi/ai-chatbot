@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DeepSeekChat from "./components/DeepSeekChat";
 
 export default function Home() {
@@ -13,6 +14,18 @@ export default function Home() {
           </p>
         </div>
         <DeepSeekChat />
+        <footer className="text-center text-gray-500">
+          <p className="flex gap-2 justify-center">
+            <span>&copy; {new Date().getFullYear()}</span>
+            <Link
+              href="https://ernestohegi.com"
+              target="_blank"
+              className="underline"
+            >
+              Ernesto Hegi
+            </Link>
+          </p>
+        </footer>
       </div>
     </main>
   );
