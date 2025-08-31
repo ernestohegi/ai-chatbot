@@ -3,7 +3,24 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState } from "react";
-import { MemoisedMarkdown } from "./MemoisedMarkdown";
+import {
+  Conversation,
+  ConversationContent,
+  ConversationScrollButton,
+} from "@/components/ui/shadcn-io/ai/conversation";
+import {
+  Message,
+  MessageContent,
+  MessageAvatar,
+} from "@/components/ui/shadcn-io/ai/message";
+import {
+  PromptInput,
+  PromptInputTextarea,
+  PromptInputToolbar,
+  PromptInputSubmit,
+} from "@/components/ui/shadcn-io/ai/prompt-input";
+import { Response } from "@/components/ui/shadcn-io/ai/response";
+import { Loader } from "@/components/ui/shadcn-io/ai/loader";
 
 const SUBMITTED = "submitted";
 const STREAMING = "streaming";
@@ -31,8 +48,30 @@ export default function DeepSeekChat() {
   }
 
   return (
-    <section className="flex flex-col flex-1 gap-4 text-xl w-full h-full overflow-scroll">
-      <form
+    <section className="flex flex-col flex-1 gap-4 text-xl w-full overflow-hidden">
+      <Conversation className="relative h-full overflow-scroll">
+        <ConversationContent>
+          {messages.map(({ id, role, parts }) => (
+            <Message from={role}>
+              <MessageAvatar
+                src=""
+                name={role === "user" ? "User: " : "AI: "}
+              />
+              <MessageContent>
+                {parts.map(
+                  (part) =>
+                    part.type === "text" && (
+                      <Response key={id}>{part.text}</Response>
+                    )
+                )}
+              </MessageContent>
+            </Message>
+          ))}
+        </ConversationContent>
+        <ConversationScrollButton />
+      </Conversation>
+      {conversationStatus && <Loader className="text-blue-500" />}
+      <PromptInput
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -41,57 +80,16 @@ export default function DeepSeekChat() {
             setInput("");
           }
         }}
-        className="flex gap-2"
       >
-        <input
+        <PromptInputTextarea
           value={input}
-          onChange={(e) => setInput(e.target.value)}
-          disabled={status !== "ready"}
-          placeholder="Say something..."
-          className="border-2 border-gray-300 rounded-md py-2 px-4 flex-grow disabled:opacity-50"
+          onChange={(e) => setInput(e.currentTarget.value)}
+          placeholder="Type your message..."
         />
-        <button
-          type="submit"
-          disabled={status !== "ready"}
-          className="border-2 py-2 px-4 rounded-md border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit"
-        >
-          Submit
-        </button>
-      </form>
-
-      {[SUBMITTED, STREAMING].includes(status) && (
-        <button
-          type="button"
-          onClick={() => stop()}
-          className="border-2 py-2 px-4 rounded-md border-red-500 text-red-500 hover:bg-red-500 hover:text-white disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit"
-        >
-          Stop
-        </button>
-      )}
-
-      <article className="flex flex-col gap-4 overflow-scroll">
-        {messages.map(({ id, role, parts }) => (
-          <div key={id} className="flex gap-2">
-            <span className="font-bold">
-              {role === "user" ? "User: " : "AI: "}
-            </span>
-            <div className="flex flex-col gap-4">
-              {parts.map(
-                (part) =>
-                  part.type === "text" && (
-                    <MemoisedMarkdown
-                      key={`${id}`}
-                      id={id}
-                      content={part.text}
-                    />
-                  )
-              )}
-            </div>
-          </div>
-        ))}
-      </article>
-
-      {conversationStatus && <p>{conversationStatus}</p>}
+        <PromptInputToolbar>
+          <PromptInputSubmit disabled={!input.trim()} status={status} />
+        </PromptInputToolbar>
+      </PromptInput>
     </section>
   );
 }
