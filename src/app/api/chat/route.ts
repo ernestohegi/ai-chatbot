@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { createDeepSeek } from "@ai-sdk/deepseek";
 import { convertToModelMessages, streamText, UIMessage } from "ai";
 
