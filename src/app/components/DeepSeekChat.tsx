@@ -36,8 +36,6 @@ export default function DeepSeekChat() {
   const isReplying = STREAMING === status;
   const hasMessages = messages.length > 0;
 
-  console.log({ status });
-
   return (
     <section className="flex flex-col flex-1 gap-4 text-xl w-full overflow-hidden">
       {!hasMessages && (
