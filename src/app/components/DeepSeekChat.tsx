@@ -20,9 +20,7 @@ import {
   PromptInputSubmit,
 } from "@/components/ui/shadcn-io/ai/prompt-input";
 import { Response } from "@/components/ui/shadcn-io/ai/response";
-import { Loader } from "@/components/ui/shadcn-io/ai/loader";
 
-const SUBMITTED = "submitted";
 const STREAMING = "streaming";
 
 export default function DeepSeekChat() {
@@ -32,45 +30,48 @@ export default function DeepSeekChat() {
     transport: new DefaultChatTransport({
       api: "/api/chat",
     }),
-    // Throttle the messages and data updates to 50ms:
     experimental_throttle: 50,
   });
 
-  let conversationStatus = "";
+  const isReplying = STREAMING === status;
+  const hasMessages = messages.length > 0;
 
-  switch (status) {
-    case STREAMING:
-      conversationStatus = "AI is typing...";
-      break;
-    case SUBMITTED:
-      conversationStatus = "AI is thinking...";
-      break;
-  }
+  console.log({ status });
 
   return (
     <section className="flex flex-col flex-1 gap-4 text-xl w-full overflow-hidden">
-      <Conversation className="relative h-full overflow-scroll">
-        <ConversationContent>
-          {messages.map(({ id, role, parts }) => (
-            <Message from={role}>
-              <MessageAvatar
-                src=""
-                name={role === "user" ? "User: " : "AI: "}
-              />
-              <MessageContent>
-                {parts.map(
-                  (part) =>
-                    part.type === "text" && (
-                      <Response key={id}>{part.text}</Response>
-                    )
-                )}
-              </MessageContent>
-            </Message>
-          ))}
-        </ConversationContent>
-        <ConversationScrollButton />
-      </Conversation>
-      {conversationStatus && <Loader className="text-blue-500" />}
+      {!hasMessages && (
+        <div className="flex items-center justify-center flex-1 h-full relative">
+          <p className="text-gray-500">
+            No messages yet. Start the conversation. Ask me anything!
+          </p>
+        </div>
+      )}
+      {hasMessages && (
+        <Conversation className="relative h-full overflow-scroll flex-1">
+          <ConversationContent>
+            {messages.map(({ id, role, parts }) => (
+              <Message key={id} from={role}>
+                <MessageAvatar
+                  src=""
+                  name={role === "user" ? "User: " : "AI: "}
+                />
+                <MessageContent>
+                  {parts.map(
+                    (part, partIndex) =>
+                      part.type === "text" && (
+                        <Response key={`${id}-${partIndex}`}>
+                          {part.text}
+                        </Response>
+                      )
+                  )}
+                </MessageContent>
+              </Message>
+            ))}
+          </ConversationContent>
+          <ConversationScrollButton />
+        </Conversation>
+      )}
       <PromptInput
         onSubmit={(e) => {
           e.preventDefault();
@@ -87,7 +88,15 @@ export default function DeepSeekChat() {
           placeholder="Type your message..."
         />
         <PromptInputToolbar>
-          <PromptInputSubmit disabled={!input.trim()} status={status} />
+          <PromptInputSubmit
+            disabled={!input.trim() && !isReplying}
+            status={status}
+            onClick={() => {
+              if (STREAMING === status) {
+                stop();
+              }
+            }}
+          />
         </PromptInputToolbar>
       </PromptInput>
     </section>
