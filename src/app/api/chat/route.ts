@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
   const result = await streamText({
     model: deepseek("deepseek-chat"),
     system: systemMessage,
-    messages: convertToModelMessages(messages),
+    messages: await convertToModelMessages(messages),
   });
 
   return result.toUIMessageStreamResponse();
