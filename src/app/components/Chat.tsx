@@ -23,7 +23,7 @@ import { Response } from "@/components/ui/shadcn-io/ai/response";
 
 const STREAMING = "streaming";
 
-export default function DeepSeekChat() {
+export default function Chat() {
   const [input, setInput] = useState("");
 
   const { messages, sendMessage, status, stop } = useChat({
@@ -71,8 +71,8 @@ export default function DeepSeekChat() {
         </Conversation>
       )}
       <PromptInput
-        onSubmit={(e) => {
-          e.preventDefault();
+        onSubmit={(event) => {
+          event.preventDefault();
 
           if (input.trim()) {
             sendMessage({ text: input });
@@ -82,7 +82,7 @@ export default function DeepSeekChat() {
       >
         <PromptInputTextarea
           value={input}
-          onChange={(e) => setInput(e.currentTarget.value)}
+          onChange={(event) => setInput(event.currentTarget.value)}
           placeholder="Type your message..."
         />
         <PromptInputToolbar>

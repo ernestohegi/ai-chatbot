@@ -1,31 +1,14 @@
-import Link from "next/link";
-import DeepSeekChat from "./components/DeepSeekChat";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Chat from "./components/Chat";
 
 export default function Home() {
   return (
     <main className="flex justify-center p-8 h-screen overflow-hidden">
       <div className="flex flex-col gap-8 max-w-3xl items-center h-full">
-        <div className="flex flex-col gap-4 items-center text-center">
-          <h1 className="text-5xl font-extrabold text-cente">
-            Your Friendly AI Assistant
-          </h1>
-          <p className="text-xl">
-            This app uses DeepSeek's AI to provide concise and helpful answers.
-          </p>
-        </div>
-        <DeepSeekChat />
-        <footer className="text-center text-gray-500">
-          <p className="flex gap-2 justify-center">
-            <span>&copy; {new Date().getFullYear()}</span>
-            <Link
-              href="https://ernestohegi.com"
-              target="_blank"
-              className="underline"
-            >
-              Ernesto Hegi
-            </Link>
-          </p>
-        </footer>
+        <Header />
+        <Chat />
+        <Footer />
       </div>
     </main>
   );
