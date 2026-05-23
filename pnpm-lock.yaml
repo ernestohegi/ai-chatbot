@@ -12,8 +12,8 @@ importers:
         specifier: 2.0.35
         version: 2.0.35(zod@4.1.5)
       '@ai-sdk/react':
-        specifier: 3.0.190
-        version: 3.0.190(react@19.2.6)(zod@4.1.5)
+        specifier: 3.0.193
+        version: 3.0.193(react@19.2.6)(zod@4.1.5)
       '@icons-pack/react-simple-icons':
         specifier: 13.13.0
         version: 13.13.0(react@19.2.6)
@@ -42,11 +42,11 @@ importers:
         specifier: 1.2.2
         version: 1.2.2(@types/react@19.2.15)(react@19.2.6)
       '@tanstack/react-query':
-        specifier: 5.100.11
-        version: 5.100.11(react@19.2.6)
+        specifier: 5.100.13
+        version: 5.100.13(react@19.2.6)
       ai:
-        specifier: 6.0.188
-        version: 6.0.188(zod@4.1.5)
+        specifier: 6.0.191
+        version: 6.0.191(zod@4.1.5)
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -60,8 +60,8 @@ importers:
         specifier: 1.1.8
         version: 1.1.8(react-markdown@10.1.0(@types/react@19.2.15)(react@19.2.6))(react@19.2.6)
       katex:
-        specifier: 0.16.47
-        version: 0.16.47
+        specifier: 0.17.0
+        version: 0.17.0
       lucide-react:
         specifier: 1.16.0
         version: 1.16.0(react@19.2.6)
@@ -147,8 +147,8 @@ packages:
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/gateway@3.0.118':
-    resolution: {integrity: sha512-XYPbVoDo1TDMVLe5Eg42gIjdOyxaizh9H0kiSSnTXr+AdrqZvutk/ypLOiqBXPV3D1K3+BSm/sbFeomZJlM64A==}
+  '@ai-sdk/gateway@3.0.120':
+    resolution: {integrity: sha512-MYKAeD2q7/sa1ZdqtL2tw0Me0B8Tok6Q/fhkJDhJl39dG8u+VBlWO9yk9lcdm784bM418o1EKObo4aOxs6+18Q==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -163,8 +163,8 @@ packages:
     resolution: {integrity: sha512-Q3BZ27qfpYqnCYGvE3vt+Qi6LGOF9R5Nmzn+9JoM1lCRsD9mYaIhfJLkSunN48nfGXJ6n+XNV0J/XVpqGQl7Dw==}
     engines: {node: '>=18'}
 
-  '@ai-sdk/react@3.0.190':
-    resolution: {integrity: sha512-ee8bZ3ZCC/PZDfCIX0LNvoPezo1v+jHp85pW6ct6B3qddsSp4SoFvapGuhK1gHRMLR6rKq0D5Gjii/+rgLzb9g==}
+  '@ai-sdk/react@3.0.193':
+    resolution: {integrity: sha512-El0jUZ/B7mvBHAD5rfSDqOAhWxutVTq7BCNhfGuwfDPT9SO0TMHybh2bMkieJQI7YOfl+qNBoWrRAOHHaFb99Q==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ~19.0.1 || ~19.1.2 || ^19.2.1
@@ -1076,11 +1076,11 @@ packages:
   '@tailwindcss/postcss@4.3.0':
     resolution: {integrity: sha512-Jm05Tjx+9yCLGv5qw1c+84Psds8MnyrEQYCB+FFk2lgGiUjlRqdxke4mVTuYrj2xnVZqKim2Apr5ySuQRYAw/w==}
 
-  '@tanstack/query-core@5.100.11':
-    resolution: {integrity: sha512-lmE0994apShXPj8CUxgx4ch5yUJhE9k/+tVwihBvPOyerACWdBocfFg24t8+0RhtlTd7tEgchDkhlCxNssvDxw==}
+  '@tanstack/query-core@5.100.13':
+    resolution: {integrity: sha512-mlKVKMTzZWGTKAC1CKOgt7axAjJ921emkEvYIp27I/PdP1yEYL/BteLY8iK35gn8hoYeKB4mgJ/ve3lrDI6/Fw==}
 
-  '@tanstack/react-query@5.100.11':
-    resolution: {integrity: sha512-J0f9s5x3LE1450nNNfYx+e/n0DMa0uOBdFJUy5r0RvmsXd4nB/n0rbHtHI1vYXhikNFan+wf51p6Tmp4c8ucrg==}
+  '@tanstack/react-query@5.100.13':
+    resolution: {integrity: sha512-HSBr8CycQEAoXsJR7KNDawBnINJEJ96Eme8oE0hCXjyodE2I97vg3IDzDJBDu18LsbzpVVJcKo80eqLfVCykxw==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -1323,8 +1323,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  ai@6.0.188:
-    resolution: {integrity: sha512-kNwIl1MM4ESzeOPDYuN+FidJ2QY5kGWHLtTMru6HHPW/JJ6nPuvHRhJ8tMX/Y2Tijx9DCiv2W7y5IBouuB712g==}
+  ai@6.0.191:
+    resolution: {integrity: sha512-zAxvjKebQE7YkSyyNIl0OM7i6/zygnKeF+yNUjD4nWOelYrG+LpDd6RnH6mjySI4zUpZ7o4wbnmAy8jc6u98vQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -2166,12 +2166,12 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
-  katex@0.16.45:
-    resolution: {integrity: sha512-pQpZbdBu7wCTmQUh7ufPmLr0pFoObnGUoL/yhtwJDgmmQpbkg/0HSVti25Fu4rmd1oCR6NGWe9vqTWuWv3GcNA==}
-    hasBin: true
-
   katex@0.16.47:
     resolution: {integrity: sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg==}
+    hasBin: true
+
+  katex@0.17.0:
+    resolution: {integrity: sha512-Vdw0ATsQ9V+LuegM/BTwQqV/6cTl5lbGcIrU+BCgLxyf6bo38ybOr372tuSIxir3CN720flu1meYR6XzNMwQnw==}
     hasBin: true
 
   keyv@4.5.4:
@@ -3097,7 +3097,7 @@ snapshots:
       '@ai-sdk/provider-utils': 4.0.27(zod@4.1.5)
       zod: 4.1.5
 
-  '@ai-sdk/gateway@3.0.118(zod@4.1.5)':
+  '@ai-sdk/gateway@3.0.120(zod@4.1.5)':
     dependencies:
       '@ai-sdk/provider': 3.0.10
       '@ai-sdk/provider-utils': 4.0.27(zod@4.1.5)
@@ -3115,10 +3115,10 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@3.0.190(react@19.2.6)(zod@4.1.5)':
+  '@ai-sdk/react@3.0.193(react@19.2.6)(zod@4.1.5)':
     dependencies:
       '@ai-sdk/provider-utils': 4.0.27(zod@4.1.5)
-      ai: 6.0.188(zod@4.1.5)
+      ai: 6.0.191(zod@4.1.5)
       react: 19.2.6
       swr: 2.4.1(react@19.2.6)
       throttleit: 2.1.0
@@ -3947,11 +3947,11 @@ snapshots:
       postcss: 8.5.14
       tailwindcss: 4.3.0
 
-  '@tanstack/query-core@5.100.11': {}
+  '@tanstack/query-core@5.100.13': {}
 
-  '@tanstack/react-query@5.100.11(react@19.2.6)':
+  '@tanstack/react-query@5.100.13(react@19.2.6)':
     dependencies:
-      '@tanstack/query-core': 5.100.11
+      '@tanstack/query-core': 5.100.13
       react: 19.2.6
 
   '@tybys/wasm-util@0.10.0':
@@ -4175,9 +4175,9 @@ snapshots:
 
   acorn@8.16.0: {}
 
-  ai@6.0.188(zod@4.1.5):
+  ai@6.0.191(zod@4.1.5):
     dependencies:
-      '@ai-sdk/gateway': 3.0.118(zod@4.1.5)
+      '@ai-sdk/gateway': 3.0.120(zod@4.1.5)
       '@ai-sdk/provider': 3.0.10
       '@ai-sdk/provider-utils': 4.0.27(zod@4.1.5)
       '@opentelemetry/api': 1.9.0
@@ -5252,11 +5252,11 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
-  katex@0.16.45:
+  katex@0.16.47:
     dependencies:
       commander: 8.3.0
 
-  katex@0.16.47:
+  katex@0.17.0:
     dependencies:
       commander: 8.3.0
 
@@ -5605,7 +5605,7 @@ snapshots:
     dependencies:
       '@types/katex': 0.16.7
       devlop: 1.1.0
-      katex: 0.16.45
+      katex: 0.16.47
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
@@ -6025,7 +6025,7 @@ snapshots:
       '@types/katex': 0.16.7
       hast-util-from-html-isomorphic: 2.0.0
       hast-util-to-text: 4.0.2
-      katex: 0.16.45
+      katex: 0.16.47
       unist-util-visit-parents: 6.0.2
       vfile: 6.0.3
 
