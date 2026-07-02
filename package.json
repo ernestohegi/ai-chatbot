@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@ai-sdk/deepseek": "2.0.39",
+    "@ai-sdk/deepseek": "3.0.5",
     "@ai-sdk/react": "3.0.211",
     "@icons-pack/react-simple-icons": "13.13.0",
     "@radix-ui/react-avatar": "1.2.0",
