@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/deepseek": "2.0.39",
-    "@ai-sdk/react": "3.0.211",
+    "@ai-sdk/react": "4.0.15",
     "@icons-pack/react-simple-icons": "13.13.0",
     "@radix-ui/react-avatar": "1.2.0",
     "@radix-ui/react-collapsible": "1.1.14",
